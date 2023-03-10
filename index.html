@@ -6,90 +6,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS linking -->
 	<link rel="stylesheet" href="./style.css">
-	<title>Remove Duplicates</title>
+	<title>Document</title>
 </head>
 <body>
-	<div class="left">
-		<div class="items">
-			<div class="item item-1">
-				<img src="./Images/black.png" alt="">
-				<div class="item-info">
-					<p>100$</p>
-					<button type="button" onclick="addItem('item_1')" id="black"><img src="./Images/cart.png" alt="" title="Add to Cart"></button>
-				</div>
-			</div>
-			<div class="item item-2">
-				<img src="./Images/blue.png" alt="">
-				<div class="item-info">
-					<p>200$</p>
-					<button type="button" onclick="addItem('item_2')" id="blue"><img src="./Images/cart.png" alt="" title="Add to Cart"></button>
-				</div>
-			</div>
-			<div class="item item-3">
-				<img src="./Images/red.png" alt="">
-				<div class="item-info">
-					<p>300$</p>
-					<button type="button" onclick="addItem('item_3')" id="red"><img src="./Images/cart.png" alt="" title="Add to Cart"></button>
-				</div>
-			</div>
-			<div class="item item-4">
-				<img src="./Images/white.png" alt="">
-				<div class="item-info">
-					<p>400$</p>
-					<button type="button" onclick="addItem('item_4')" id="white"><img src="./Images/cart.png" alt="" title="Add to Cart"></button>
-				</div>
-			</div>
-			<div class="item item-5">
-				<img src="./Images/yellow.png" alt="">
-				<div class="item-info">
-					<p>500$</p>
-					<button type="button" onclick="addItem('item_5')" id="yellow"><img src="./Images/cart.png" alt="" title="Add to Cart"></button>
-				</div>
-			</div>
+	<header>
+		<h1>
+			check for divisibility
+		</h1>
+		<p>
+			' divisible by 3 , but not by 2 ' 
+		</p>
+	</header>
+	<main>
+		<div id="in-screen-1">
+			<label for="in-len">Enter how many element's you want in your array : </label>
+			<input type="number" name="" id="in-len">
+			<submit class="btn-submit" id="btn-submit-screen-1">submit</submit>
 		</div>
-	</div>
-	<div class="right">
-		<header>
-			<h1>Cart</h1>
-		</header>
-		<main>
-			<div id="added-item-list">
-				<header class="item-list-head">
-					<p class="sr-no-head">Sr.No.</p>
-					<p class="pro-name-head">Product Name</p>
-					<p class="pro-price-head">Product Price($)</p>
-				</header>
-				<div id="item-list" class="item-list-show">	
-				</div>
-				<footer class="total">
-					<p class="total-quantity" id="TQ-s">Total Quantity : </p>
-					<p class="total-quantity" id="TA-s">Total Ammount : </p>
-				</footer>
+		<div id="in-screen-2">
+			<h1>in-screen-2</h1>
+			<input type="number" class="" id="">
 
-			</div>
-		</main>
-		<button type="button" onclick="removeDupliItem()">Remove Duplicate's</button>
-
-		<div id="removed-duplicate">
-			<div class="item-list-head">
-				<p class="sr-no-head">Sr.No.</p>
-				<p class="pro-name-head">Product Name</p>
-				<p class="pro-price-head">Product Price($)</p>
-			</div>
-			<div id="item-list-duplicate" class="item-list-show">
-				<!-- <div id="item-list-row-1" class="item-list-row">
-					 <p class="sr-no">01</p>
-					<p class="pro-name">Black</p>
-					<p class="pro-price">10.00$</p>
-				</div> -->	
-			</div>
-			<footer class="total">
-				<p class="total-quantity" id="TQ-d">Total Quantity : </p>
-				<p class="total-quantity" id="TA-d">Total Ammount : </p>
-			</footer>
 		</div>
-	</div>
-	<script src="./script.js" defer></script>
+		<div id="op-screen">
+			<h1>op-screen-1</h1>
+		</div>
+		
 
+	</main>
+
+	<!-- script linking  -->
+	<script src="./script.js"></script>
 </body>
 </html>
