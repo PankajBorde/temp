@@ -70,14 +70,20 @@ btnSubmitScreen_1.addEventListener("click" , ()=>{
 	}
 	
 	// giving right position to last items of gird, each items of divTag
-	if( (inLenValue%3 == 1) && (inLenValue != 1) ){
+	if(inLenValue == 1){
+		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto" ;
+	}
+	else if(inLenValue == 2){
+		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto auto" ;
+	}
+	else if(inLenValue%3 == 1){
 		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto auto auto" ;
 		
 		// first last
 		inScreen_2Value[(inLenValue - 1)][`divTag_${(inLenValue - 1)}`].style.gridColumnStart = "2" ; 
 		inScreen_2Value[(inLenValue - 1)][`divTag_${(inLenValue - 1)}`].style.gridColumnEnd = "3" ;
 	}
-	else if( (inLenValue%3 == 2) && (inLenValue != 2) ){
+	else if(inLenValue%3 == 2){
 		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto auto auto" ;
 
 		// first last
@@ -88,11 +94,8 @@ btnSubmitScreen_1.addEventListener("click" , ()=>{
 		inScreen_2Value[(inLenValue - 2)][`divTag_${(inLenValue - 2)}`].style.gridColumnStart = "1" ; 
 		inScreen_2Value[(inLenValue - 2)][`divTag_${(inLenValue - 2)}`].style.gridColumnEnd = "2" ;
 	}
-	else if(inLenValue == 1){
-		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto" ;
-	}
-	else if(inLenValue == 2){
-		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto auto" ;
+	else{
+		document.querySelector("#input-block-in-screen-2").style.gridTemplateColumns = "auto auto auto" ;
 	}
 
 	// Submit button for screen-2-input
@@ -116,6 +119,15 @@ btnSubmitScreen_1.addEventListener("click" , ()=>{
 	}
 
 	btnSubmitScreen_2.addEventListener("click" , ()=>{
+		// checking all input field is filled or not
+		for(let i=0; i<inLenValue; i++){
+			if(inScreen_2ValueArray[i] == undefined){
+				alert("Please filled all input box !")
+				return undefined ;
+			}
+
+		}
+
 		// output screen heading visible
 		document.querySelector("#op-screen-heading").style.display = "block" ;
 
@@ -139,6 +151,16 @@ btnSubmitScreen_1.addEventListener("click" , ()=>{
 		else if(tempCount == 2){
 			document.querySelector("#div-op-screen").style.gridTemplateColumns = "auto auto" ;
 		}
+		else if(tempCount == 0){
+			opScreenValue[tempCount] = document.createElement("span") ;
+			opScreenValue[tempCount].className = "op-screen-value" ;
+			opScreenValue[tempCount].innerHTML = "None" ;
+
+			document.querySelector("#div-op-screen").appendChild(opScreenValue[tempCount]) ;
+			document.querySelector("#div-op-screen").style.gridTemplateColumns = "auto" ;
+
+			tempCount++ ;
+		}
 		else if(tempCount % 3 == 0){
 			document.querySelector("#div-op-screen").style.gridTemplateColumns = "auto auto auto" ;
 		}
@@ -148,7 +170,7 @@ btnSubmitScreen_1.addEventListener("click" , ()=>{
 			opScreenValue[(tempCount - 1)].style.gridColumnStart = "2" ;
 			opScreenValue[(tempCount - 1)].style.gridColumnEnd = "3" ;
 		}
-		else{
+		else if(tempCount % 3 == 2){
 			document.querySelector("#div-op-screen").style.gridTemplateColumns = "auto auto auto" ;
 			// first last item
 			opScreenValue[(tempCount - 1)].style.gridColumnStart = "3" ;
